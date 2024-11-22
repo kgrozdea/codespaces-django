@@ -1,0 +1,13 @@
+<form method="POST">
+    {{ form }}
+    <button type="submit">Postar aviso</button>
+   </form>
+   {% if valor_final != None %}
+    <p>O aviso que será postado é {{ form }}.</p>
+   {% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Salvar Aviso</button>
+   </form>
