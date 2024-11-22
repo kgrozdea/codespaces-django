@@ -23,6 +23,32 @@
             <p>
                 GitHub Codespaces <span class="heart">♥️</span> Django
             </p>
+            {% for aviso in aviso %}
+                {% if aviso.disponivel %}
+                    <p>{{aviso.titulo}}</p>
+                 {% endif %}
+            {% endfor %}
+
+            <a href="/create_aviso">
+                Adicionar Aviso
+               </a>
+
+            <p>{{aviso.titulo}}
+                ({{aviso.tipo}})</p>
+            <p>{{aviso.descricao}}</p>
+            <p>{{aviso.data}}</p>
+            <a href="/edit_aviso/1">
+                Editar Aviso
+            </a>
+            
+            {% if referencia != None %}
+                <a href="/remove_aviso/1">
+               Remover Aviso
+               </a>
+              {% else %}
+               <p>Aviso com id 1 foiremovido do banco</p>
+            {% endif %}
+
             <p class="small">
                 Edit <code>hello_world/templates/index.html</code> and see changes live!
             </p>
